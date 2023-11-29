@@ -21,36 +21,45 @@ const countUp = () => {
 };
 
 const setButtonInitial = () => {
-  start.disabled = false;
-  stop.disabled = true;
-  reset.disabled = true;
+  start.classList.remove("inactive");
+  stop.classList.add("inactive");
+  reset.classList.add("inactive");
 };
 const setButtonRunning = () => {
-  start.disabled = true;
-  stop.disabled = false;
-  reset.disabled = true;
+  start.classList.add("inactive");
+  stop.classList.remove("inactive");
+  reset.classList.add("inactive");
 };
 const setButtonStopped = () => {
-  start.disabled = false;
-  stop.disabled = true;
-  reset.disabled = false;
+  start.classList.remove("inactive");
+  stop.classList.add("inactive");
+  reset.classList.remove("inactive");
 };
 
 setButtonInitial();
 
 start.addEventListener("click", () => {
+  if (start.classList.contains("inactive") === true) {
+    return;
+  }
   setButtonRunning();
   startTime = Date.now();
   countUp();
 });
 
 stop.addEventListener("click", () => {
+  if (stop.classList.contains("inactive") === true) {
+    return;
+  }
   setButtonStopped();
   clearTimeout(timeOutId);
   elapsedTime += Date.now() - startTime;
 });
 
 reset.addEventListener("click", () => {
+  if (reset.classList.contains("inactive") === true) {
+    return;
+  }
   setButtonInitial();
   timer.textContent = "00:00.000";
   elapsedTime = 0;
