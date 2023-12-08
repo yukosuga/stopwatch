@@ -1,5 +1,5 @@
 # Stopwatch ⏱
-## Mini Application for JavaScript Basic Practice
+## Mini Application for JavaScript DOM Practice
 
 ![Static Badge](https://img.shields.io/badge/HTML5-e6eae3?style=for-the-badge&logo=HTML5)  
 ![Static Badge](https://img.shields.io/badge/CSS3-e6eae3?style=for-the-badge&logo=CSS3)  
